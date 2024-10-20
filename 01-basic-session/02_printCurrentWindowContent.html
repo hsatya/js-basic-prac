@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Window</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background: lemonchiffon;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Current Window</h1>
+      <button id="printContent">Print</button>
+    </div>
+
+    <script>
+      const print = document.querySelector("#printContent");
+
+      function printCurrentPage() {
+        window.print();
+      }
+
+      print.addEventListener("click", printCurrentPage);
+    </script>
+  </body>
+</html>

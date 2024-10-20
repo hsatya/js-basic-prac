@@ -11,3 +11,7 @@ The **01-basic-session** contains multiple questions covering fundamental JavaSc
 Write a JavaScript program to display the current day and time in the following format:
 Sample Output: Today is : Tuesday.
 Current time is : 10 PM : 30 : 38
+
+### Question 2: Write a JavaScript program to print the current window contents.
+
+This JavaScript program uses the `window.print()` method to open the print dialog box and print the visible content of the current browser window.
