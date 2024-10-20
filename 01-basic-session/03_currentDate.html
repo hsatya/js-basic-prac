@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day and Time</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background: lemonchiffon;
+    }
+    main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #dateForamt {
+      border: none;
+      padding: 2px;
+      border-radius: 5px;
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Current Date</h1>
+      <main>
+        <p id="date"></p>
+        <div class="dateSelect">
+          <label for="dateForamt">Choose a format</label>
+          <select name="dateForamt" id="dateForamt">
+            <option value="f1">dd/mm/yyyy</option>
+            <option value="f2">mm/dd/yyyy</option>
+            <option value="f3">yyyy/mm/dd</option>
+          </select>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const displayDate = document.querySelector("#date");
+      const selectFormat = document.querySelector("#dateForamt");
+
+      function updateDisplayDate(format) {
+        const nowDateTime = new Date();
+        let currentDate = nowDateTime.getDate();
+        let curretMonth = nowDateTime.getMonth() + 1;
+        const currentYear = nowDateTime.getFullYear();
+        let formattedDate;
+        currentDate = currentDate < 10 ? "0" + currentDate : currentDate;
+        curretMonth = curretMonth < 10 ? "0" + curretMonth : curretMonth;
+        switch (format) {
+          case "f1":
+            formattedDate = `${currentDate}/${curretMonth}/${currentYear}`;
+            break;
+          case "f2":
+            formattedDate = `${curretMonth}/${currentDate}/${currentYear}`;
+            break;
+          case "f3":
+            formattedDate = `${currentYear}/${curretMonth}/${currentDate}`;
+            break;
+          default:
+            formattedDate = `${currentDate}/${curretMonth}/${currentYear}`;
+        }
+
+        displayDate.textContent = formattedDate;
+      }
+
+      updateDisplayDate("f1");
+      selectFormat.addEventListener("change", () =>
+        updateDisplayDate(selectFormat.value)
+      );
+    </script>
+  </body>
+</html>

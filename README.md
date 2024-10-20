@@ -15,3 +15,9 @@ Current time is : 10 PM : 30 : 38
 ### Question 2: Write a JavaScript program to print the current window contents.
 
 This JavaScript program uses the `window.print()` method to open the print dialog box and print the visible content of the current browser window.
+
+### Question 3: Write a JavaScript program to print the current window contents.
+
+Write a JavaScript program to get the current date.  
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
