@@ -21,3 +21,8 @@ This JavaScript program uses the `window.print()` method to open the print dialo
 Write a JavaScript program to get the current date.  
 Expected Output :
 mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+### Question 4: Write a JavaScript program to find the area of a triangle.
+
+Write a JavaScript program to get the current date.
+Expected output: Area of triangle with side a, b, c is: area in sq.m upto 2 decimal places.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area of Triangle</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background: lemonchiffon;
+    }
+  </style>
+  <body>
+    <main class="container">
+      <h1>Area of Triangle</h1>
+      <div class="inputArea">
+        <label for="inputs">Enter 3 side of triangle using commas: </label>
+        <input type="text" name="inputs" id="inputs" />
+        <button>Enter</button>
+      </div>
+      <p id="output"></p>
+    </main>
+
+    <script>
+      const inputs = document.querySelector("#inputs");
+      const output = document.querySelector("#output");
+      const enter = document.querySelector("button");
+      let values;
+      let a, b, c;
+      enter.addEventListener("click", () => {
+        values = inputs.value.trim().split(",");
+        a = values[0].trim();
+        b = values[1].trim();
+        c = values[2].trim();
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+          output.textContent = "Enter numbers only and using commas";
+          inputs.value = "";
+        } else {
+          a = Number(a);
+          b = Number(b);
+          c = Number(c);
+          const s = (a + b + c) / 2;
+          const area = Math.sqrt((s - a) * (s - b) * (s - c));
+          output.textContent = `Area of triangle with side ${a}, ${b}, ${c} is: ${area.toFixed(
+            2
+          )} sq.m.`;
+          inputs.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
